@@ -40,3 +40,100 @@ cd mask2former/modeling/pixel_decoder/ops
 sh make.sh
 cd ../../../..
 ```
+
+## 📁 Project Structure
+
+The repository is organized as follows:
+
+```text
+BDA/ [Underwater Instance Segmentation Framework]
+├── checkpoints/                  # Pre-trained and trained model weights
+│
+├── configs/                      # Experiment configuration files
+│   ├── UIIS/                     # Configurations for UIIS
+│   └── USIS10K/                  # Configurations for USIS10K
+│
+├── data/                         # Dataset root
+│   ├── UIIS/
+│   │   ├── train/
+│   │   │   ├── images/
+│   │   │   └── annotations/
+│   │   └── val/
+│   │       ├── images/
+│   │       └── annotations/
+│   │
+│   └── USIS10K/
+│       ├── train/
+│       ├── val/
+│       ├── multi_class_annotations/
+│       ├── foreground_annotations/
+│       └── test/
+│       
+├── datasets/                     # Dataset preparation scripts
+│   ├── prepare_ade20k_ins_seg.py
+│   ├── prepare_ade20k_pan_seg.py
+│   ├── prepare_ade20k_sem_seg.py
+│   └── prepare_coco_semantic_annos_from_panoptic_annos.py
+│
+├── mask2former/                  # Mask2Former implementation
+│   ├── data/                     # Dataset registration and data loaders
+│   ├── evaluation/               # Evaluation metrics
+│   ├── modeling/                 # Model components
+│   ├── utils/                    # Utility functions
+│   ├── __init__.py
+│   ├── config.py                 # Configuration definitions
+│   ├── maskformer_model.py       # Main segmentation model
+│   └── test_time_augmentation.py # Test-time augmentation
+│
+├── tools/                        # Model conversion and evaluation tools
+│   ├── convert-pretrained-swin-model-to-d2.py
+│   ├── convert-torchvision-to-d2.py
+│   ├── evaluate_coco_boundary_ap.py
+│   ├── evaluate_pq_for_semantic_segmentation.py
+│   └── README.md
+│
+├── .gitignore
+├── eval.sh                       # Evaluation script
+├── LICENSE
+├── README.md
+├── train.sh                      # Training script
+└── train_net.py                  # Main training and evaluation entry
+```
+---
+
+## 📥 Datasets and Pre-trained Weights
+
+The pretrained DINOv2 weights are available from the official [DINOv2 repository](https://github.com/facebookresearch/dinov2). We use the DINOv2 ViT-L/14 model without registers.
+
+The datasets can be downloaded from the following repositories:
+
+- [UIIS Dataset](https://github.com/LiamLian0727/WaterMask)
+- [USIS10K Dataset](https://github.com/LiamLian0727/USIS10K)
+
+After downloading, please organize the datasets according to the directory structure described above.
+
+---
+
+## 🚀 Train & Evaluate
+
+Train the BDA model on the UIIS or USIS10K dataset:
+
+```bash
+bash train.sh
+```
+
+Evaluate the pretrained BDA models on the test sets:
+
+```bash
+bash eval.sh
+```
+
+The expected performance is summarized below:
+
+| Dataset | Test Setting | Backbone | $mAP$ | $AP_{50}$ | $AP_{75}$ | Weights |
+|:-------:|:------------:|:--------:|:-----:|:---------:|:---------:|:-------:|
+| UIIS | Instance | ViT-L | 36.7 | 52.4 | 40.8 | Coming soon |
+| USIS10K | Class-Agnostic | ViT-L | 66.0 | 84.2 | 73.9 | Coming soon |
+| USIS10K | Multi-Class | ViT-L | 50.8 | 65.3 | 56.2 | Coming soon |
+
+---
