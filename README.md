@@ -14,3 +14,29 @@ Fine-tuning vision foundation models (VFMs) has become the dominant paradigm for
 <p align="center">
   <img src="framework.png" alt="BDA Framework" width="100%">
 </p>
+
+## 🛠️ Installation
+
+```bash
+conda create --name BDA python=3.10 -y
+conda activate BDA
+
+conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 \
+    pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# Install Detectron2
+git clone https://github.com/facebookresearch/detectron2.git
+cd detectron2
+pip install -e .
+
+# Install BDA
+cd ..
+git clone https://github.com/Marinus47/BDA.git
+cd BDA
+pip install -r requirements.txt
+
+# Compile the Mask2Former CUDA operator
+cd mask2former/modeling/pixel_decoder/ops
+sh make.sh
+cd ../../../..
+```
