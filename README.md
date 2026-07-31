@@ -132,8 +132,14 @@ The expected performance is summarized below:
 
 | Dataset | Test Setting | Backbone | $mAP$ | $AP_{50}$ | $AP_{75}$ | Weights |
 |:-------:|:------------:|:--------:|:-----:|:---------:|:---------:|:-------:|
-| UIIS | Instance | ViT-L | 36.7 | 52.4 | 40.8 | Coming soon |
-| USIS10K | Class-Agnostic | ViT-L | 66.0 | 84.2 | 73.9 | Coming soon |
-| USIS10K | Multi-Class | ViT-L | 50.8 | 65.3 | 56.2 | Coming soon |
+| UIIS | Instance | ViT-L | 36.7 | 52.4 | 40.8 | model |
+| USIS10K | Class-Agnostic | ViT-L | 66.0 | 84.2 | 73.9 | model |
+| USIS10K | Multi-Class | ViT-L | 50.8 | 65.3 | 56.2 | model |
 
 ---
+
+---
+
+## 🙏 Acknowledgement
+
+This project is built upon [DiveSeg](https://github.com/ettof/Diveseg), [DINOv2](https://github.com/facebookresearch/dinov2), and [Mask2Former](https://github.com/facebookresearch/Mask2Former). We sincerely thank the authors for their excellent work and for making their code publicly available.
