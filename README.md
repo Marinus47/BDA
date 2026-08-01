@@ -133,7 +133,7 @@ The expected performance is summarized below:
 | Dataset | Test Setting | Backbone | $mAP$ | $AP_{50}$ | $AP_{75}$ | Weights |
 |:-------:|:------------:|:--------:|:-----:|:---------:|:---------:|:-------:|
 | UIIS | Instance | ViT-L | 36.7 | 52.4 | 40.8 | [model](https://drive.google.com/file/d/1JPuOoblSen9anskgwYfPU4g4cxjcZ6Ai/view?usp=sharing)|
-| USIS10K | Class-Agnostic | ViT-L | 66.0 | 84.2 | 73.9 | model |
+| USIS10K | Class-Agnostic | ViT-L | 66.0 | 84.2 | 73.9 | [model](https://drive.google.com/file/d/1gdn0tOGZLIdGheVR6hLm8evANJ6dT7Uz/view?usp=sharing) |
 | USIS10K | Multi-Class | ViT-L | 50.8 | 65.3 | 56.2 | model |
 
 ---
