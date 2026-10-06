@@ -1,8 +1,7 @@
 
 # [ACM MM 2026] BDA: Learning a Band-Decomposed Adapter for Underwater Instance Segmentation
 
-Junyi Wang, Guodong Fan<sup>&#42;</sup>, Genji Yuan, Jinjiang Li<br>
-<sup>&#42;</sup> Corresponding author.
+
 
 ## 📚 Introduction
 Official implementation of **BDA**, a band-decomposed adapter designed for underwater instance segmentation.
